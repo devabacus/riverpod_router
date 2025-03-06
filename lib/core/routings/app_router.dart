@@ -11,17 +11,20 @@ part 'app_router.g.dart';
 @riverpod
 GoRouter appRouter(Ref ref) {
   return GoRouter(
-    initialLocation: AppRoutes.home,
+    initialLocation: AppRoutes.homePath,
     routes: [
       GoRoute(
-        path: AppRoutes.home,
+        name: AppRoutes.home,
+        path: AppRoutes.homePath,
         builder: (BuildContext context, state) => Home(),
       ),
       GoRoute(
+        name: AppRoutes.second,
         path: AppRoutes.secondPath,
         builder: (BuildContext countext, state) => SecondScreen(id: "1",),
       ),
       GoRoute(
+        name:AppRoutes.secondWithId,
         path: AppRoutes.secondWithIdPath,
         builder: (BuildContext context, state) {
           final id = state.pathParameters['id'] ?? '';

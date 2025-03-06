@@ -17,7 +17,7 @@ class SecondScreen extends StatelessWidget {
             Text("Second Screen id = $id"),
             SizedBox(height: 30),
             ElevatedButton(
-              onPressed: () => context.go(AppRoutes.home),
+              onPressed: () => context.goNamed(AppRoutes.home),
               child: Text("Домой"),
             ),
           ],

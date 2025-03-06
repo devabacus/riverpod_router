@@ -15,7 +15,7 @@ class Home extends StatelessWidget {
             Text("Home"),
             SizedBox(height: 30),
             ElevatedButton(
-              onPressed: () => context.go(AppRoutes.secondWithIdPath.replaceFirst(':id', '125'), ),
+              onPressed: () => context.goNamed(AppRoutes.secondWithId,pathParameters: {'id':'333'} ),
               child: Text("На второй экран"),
             ),
           ],
