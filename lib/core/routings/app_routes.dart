@@ -7,8 +7,6 @@ abstract class AppRoutes {
   static const loginPage = 'loginPage';
   static const loginPagePath = '/loginPage';
 
-
-
   static const second = 'second';
   static const secondPath = '/second';
 
