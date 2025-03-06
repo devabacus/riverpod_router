@@ -7,15 +7,21 @@ class LoginPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Center(
-      child: Column(
-        children: [
-          AuthTextField(onTextChanged: (val) => {}, label: "Логин"),
-          SizedBox(height: 30),
-          AuthTextField(onTextChanged: (val) => {}, label: "Логин"),
-          SizedBox(height: 30),
-          ElevatedButton(onPressed: (){}, child: Text("Авторизация"))
-        ],
+    return Scaffold(
+      body: Center(
+        child: SizedBox(
+          width: MediaQuery.of(context).size.width * 0.7,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              AuthTextField(onTextChanged: (val) => {}, label: "Логин"),
+              SizedBox(height: 30),
+              AuthTextField(onTextChanged: (val) => {}, label: "Пароль"),
+              SizedBox(height: 30),
+              ElevatedButton(onPressed: () {}, child: Text("Авторизация")),
+            ],
+          ),
+        ),
       ),
     );
   }
