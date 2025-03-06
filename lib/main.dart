@@ -1,28 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'presentation/pages/second_screen.dart';
-import 'presentation/pages/home_screen.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:riverpod_router/core/routings/app_router.dart';
 
-final _router = GoRouter(
-  routes: [
-    GoRoute(path: '/', builder: (context, state) => Home()),
-    GoRoute(
-      path: '/secondScreen',
-      builder: (countext, state) => SecondScreen(),
-    ),
-  ],
-);
+
 
 void main() {
-  runApp(const MyApp());
+  runApp(ProviderScope(child: MyApp()));
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends ConsumerWidget {
   const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp.router(routerConfig: _router);
+  Widget build(BuildContext context, WidgetRef ref) {
+    final router = ref.read(appRouterProvider);
+    return MaterialApp.router(routerConfig: router);
   }
 }
 

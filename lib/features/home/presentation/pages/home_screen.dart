@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:riverpod_router/core/routings/app_routes.dart';
 
-
-class SecondScreen extends StatelessWidget {
-  const SecondScreen({super.key});
+class Home extends StatelessWidget {
+  const Home({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,11 +12,11 @@ class SecondScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("Second Screen"),
+            Text("Home"),
             SizedBox(height: 30),
             ElevatedButton(
-              onPressed: () => context.go('/'),
-              child: Text("Домой"),
+              onPressed: () => context.go(AppRoutes.second),
+              child: Text("На второй экран"),
             ),
           ],
         ),
