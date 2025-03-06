@@ -13,10 +13,20 @@ GoRouter appRouter(Ref ref) {
   return GoRouter(
     initialLocation: AppRoutes.home,
     routes: [
-      GoRoute(path: AppRoutes.home, builder: (context, state) => Home()),
       GoRoute(
-        path: AppRoutes.second,
-        builder: (countext, state) => SecondScreen(),
+        path: AppRoutes.home,
+        builder: (BuildContext context, state) => Home(),
+      ),
+      GoRoute(
+        path: AppRoutes.secondPath,
+        builder: (BuildContext countext, state) => SecondScreen(id: "1",),
+      ),
+      GoRoute(
+        path: AppRoutes.secondWithIdPath,
+        builder: (BuildContext context, state) {
+          final id = state.pathParameters['id'] ?? '';
+          return SecondScreen(id: id);
+        },
       ),
     ],
     errorBuilder:

@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:riverpod_router/core/routings/app_routes.dart';
 
-
 class SecondScreen extends StatelessWidget {
-  const SecondScreen({super.key});
+  final String id;
+
+  const SecondScreen({super.key, required this.id});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +14,7 @@ class SecondScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("Second Screen"),
+            Text("Second Screen id = $id"),
             SizedBox(height: 30),
             ElevatedButton(
               onPressed: () => context.go(AppRoutes.home),
