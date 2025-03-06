@@ -5,6 +5,11 @@ flutter clean
 flutter pub get
 
 
+flutter pub add flutter_riverpod riverpod_annotation hooks_riverpod freezed_annotation json_annotation go_router
+flutter pub add --dev riverpod_generator build_runner custom_lint riverpod_lint freezed json_serializable
+
+
+
 flutter pub add flutter_riverpod
 flutter pub add riverpod_annotation
 flutter pub add dev:riverpod_generator
