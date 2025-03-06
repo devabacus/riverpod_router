@@ -28,7 +28,7 @@ GoRouter appRouter(Ref ref) {
       GoRoute(
         name: AppRoutes.second,
         path: AppRoutes.secondPath,
-        builder: (BuildContext countext, state) => SecondScreen(id: "1"),
+        builder: (BuildContext context, state) => SecondScreen(id: "1"),
       ),
       GoRoute(
         name: AppRoutes.secondWithId,
