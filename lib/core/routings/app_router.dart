@@ -19,11 +19,11 @@ GoRouter appRouter(Ref ref) {
         path: AppRoutes.homePath,
         builder: (BuildContext context, state) => Home(),
       ),
-      GoRoute(
-        name: AppRoutes.loginPage,
-        path: AppRoutes.loginPagePath,
-        builder: (BuildContext context, state) => LoginPage(),
-      ),
+      // GoRoute(
+      //   name: AppRoutes.loginPage,
+      //   path: AppRoutes.loginPagePath,
+      //   builder: (BuildContext context, state) => LoginPage(),
+      // ),
 
       GoRoute(
         name: AppRoutes.second,
