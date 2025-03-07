@@ -25,24 +25,21 @@ final sharedPreferencesProvider =
 @Deprecated('Will be removed in 3.0. Use Ref instead')
 // ignore: unused_element
 typedef SharedPreferencesRef = AutoDisposeFutureProviderRef<SharedPreferences>;
-String _$storageProviderHash() => r'4d9fee189cdafbc86b16e3b5db5969d4cae9e945';
+String _$storageHash() => r'a7b627cf48504fe302bcb72cd0ee14986d1e7814';
 
-/// See also [storageProvider].
-@ProviderFor(storageProvider)
-final storageProviderProvider =
-    AutoDisposeProvider<IStorageRepository>.internal(
-      storageProvider,
-      name: r'storageProviderProvider',
-      debugGetCreateSourceHash:
-          const bool.fromEnvironment('dart.vm.product')
-              ? null
-              : _$storageProviderHash,
-      dependencies: null,
-      allTransitiveDependencies: null,
-    );
+/// See also [storage].
+@ProviderFor(storage)
+final storageProvider = AutoDisposeProvider<IStorageRepository>.internal(
+  storage,
+  name: r'storageProvider',
+  debugGetCreateSourceHash:
+      const bool.fromEnvironment('dart.vm.product') ? null : _$storageHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
+);
 
 @Deprecated('Will be removed in 3.0. Use Ref instead')
 // ignore: unused_element
-typedef StorageProviderRef = AutoDisposeProviderRef<IStorageRepository>;
+typedef StorageRef = AutoDisposeProviderRef<IStorageRepository>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

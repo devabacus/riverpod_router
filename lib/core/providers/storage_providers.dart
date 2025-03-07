@@ -13,7 +13,7 @@ Future<SharedPreferences> sharedPreferences(Ref ref) async{
 }
 
 @riverpod
-IStorageRepository storageProvider(Ref ref) {
+IStorageRepository storage(Ref ref) {
   final sharedPreferences = ref.watch(sharedPreferencesProvider).value;
   if (sharedPreferences == null) {
     throw UnimplementedError('SharedPreferences not initialized');
