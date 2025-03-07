@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_router/features/auth/presentation/controllers/login_controllers.dart';
 import 'package:riverpod_router/features/auth/presentation/widgets/auth_text_field.dart';
 
 class LoginPage extends ConsumerWidget {
@@ -7,6 +8,11 @@ class LoginPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    
+    final controller = ref.read(loginControllerProvider.notifier);
+    final loginState = ref.watch(loginControllerProvider);
+    
+
     return Scaffold(
       body: Center(
         child: SizedBox(
@@ -14,11 +20,11 @@ class LoginPage extends ConsumerWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              AuthTextField(onTextChanged: (val) => {}, label: "Логин"),
+              AuthTextField(onTextChanged: (str) => controller.setLogin(str), label: "Логин"),
               SizedBox(height: 30),
-              AuthTextField(onTextChanged: (val) => {}, label: "Пароль"),
+              AuthTextField(onTextChanged: (str) => controller.setPassword(str), label: "Пароль"),
               SizedBox(height: 30),
-              ElevatedButton(onPressed: () {}, child: Text("Авторизация")),
+              ElevatedButton(onPressed: loginState.isLoading ? null : controller.login, child: loginState.isLoading ? CircularProgressIndicator() : Text("Авторизация")),
             ],
           ),
         ),
