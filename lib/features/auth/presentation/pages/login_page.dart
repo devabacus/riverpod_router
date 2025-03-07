@@ -12,7 +12,6 @@ class LoginPage extends ConsumerWidget {
     final controller = ref.read(loginControllerProvider.notifier);
     final loginState = ref.watch(loginControllerProvider);
     
-
     return Scaffold(
       body: Center(
         child: SizedBox(

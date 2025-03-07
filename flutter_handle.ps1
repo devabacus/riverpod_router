@@ -40,3 +40,4 @@ flutter pub run build_runner watch --delete-conflicting-outputs
 
 
 flutter pub add http
+flutter pub add shared_preferences
